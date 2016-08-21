@@ -11,11 +11,6 @@
 			<dir name="${rebel.workspace.path}/gnuob-app/src/main/webapp">
 			</dir>
 		</link>
-		<link target="/">
-			<dir name="${rebel.workspace.path}/gnuob-app/target/m2e-wtp/web-resources">
-				<exclude name="/"/>
-			</dir>
-		</link>
 	</web>
 
 </application>

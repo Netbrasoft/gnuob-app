@@ -1,288 +1,328 @@
 <wicket:panel xmlns:wicket="http://wicket.apache.org">
-	<wicket:container wicket:id="customerViewOrEditFragement"></wicket:container>
-	<wicket:fragment wicket:id="customerEditFragement">
-		<table class="table" style="border-top: none;">
-			<tbody>
-				<tr>
-					<td style="border-top: none;">
-						<form wicket:id="customerEditForm" class="form-horizontal">
-							<div class="panel-heading">
-								<h3 class="panel-title">Personal</h3>
-							</div>
-							<div class="panel-body">
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="suffixMessage">[Suffix Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="suffix" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="salutationMessage">[Salution Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="salutation" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="firstNameMessage">[First Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="firstName" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="middleNameMessage">[Middle Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="middleName" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="lastNameMessage">[Last Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="lastName" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="dateOfBirthMessage">[Date Of Birth Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="dateOfBirth" class="form-control input-sm" type="text" data-provide="datepicker" data-date-format="dd-mm-yyyy"></input>
-									</div>
-								</div>
-							</div>
-							<div class="panel-heading">
-								<h3 class="panel-title">Address</h3>
-							</div>
-							<div class="panel-body">
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="postalCodeMessage">[Postal Code Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.postalCode" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="numberMessage">[Number Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.number" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="countryMessage">[Country Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.country" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="street1Message">[Street1 Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.street1" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="street2Message">[street2 Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.street2" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="complementMessage">[Complement Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.complement" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="districtMessage">[District Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.district" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="cityNameMessage">[City Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.cityName" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="stateOrProvinceMessage">[State Or Province Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.stateOrProvince" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="countryNameMessage">[Country Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.countryName" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="internationalStreetMessage">[International Street Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.internationalStreet" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="internationalStateAndCityMessage">[International StateAndCity Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.internationalStateAndCity" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="phoneMessage">[Phone Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="address.phone" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-							</div>
-						</form>
-					</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td style="border-top: none;"><span wicket:id="feedback">[Feedback]</span></td>
-				</tr>
-				<tr>
-					<td style="border-top: none;" colspan="1" align="right"><a href="#" wicket:id="cancel" class="btn btn-xs"><wicket:message key="cancelMessage">[Cancel]</wicket:message></a><a wicket:id="save" class="btn btn-primary btn-xs"><wicket:message key="saveAndCloseMessage">[Save And Close]</wicket:message></a></td>
-				</tr>
-			</tfoot>
-		</table>
-	</wicket:fragment>
-	<wicket:fragment wicket:id="customerViewFragement">
-		<table class="table" style="border-top: none;">
-			<thead>
-				<tr>
-					<td colspan="1" align="left"><a href="#" wicket:id="edit" class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span>&nbsp;<wicket:message key="editMessage">[Edit Message]</wicket:message></a></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="border-top: none;">
-						<form wicket:id="customerViewForm" class="form-horizontal">
-							<div class="panel-heading">
-								<h3 class="panel-title">Personal</h3>
-							</div>
-							<div class="panel-body">
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="suffixMessage">[Suffix Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="suffix" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="salutationMessage">[Salution Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span class="form-control input-sm" wicket:id="salutation"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="firstNameMessage">[First Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="firstName" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="middleNameMessage">[Middle Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="middleName" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="lastNameMessage">[Last Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="lastName" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="dateOfBirthMessage">[Date Of Birth Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="dateOfBirth" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-							</div>
-							<div class="panel-heading">
-								<h3 class="panel-title">Address</h3>
-							</div>
-							<div class="panel-body">
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="postalCodeMessage">[Postal Code Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.postalCode" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="numberMessage">[Number Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.number" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="countryMessage">[Country Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.country" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="street1Message">[Street1 Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.street1" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="street2Message">[street2 Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.street2" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="complementMessage">[Complement Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.complement" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="districtMessage">[District Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.district" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="cityNameMessage">[City Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.cityName" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="stateOrProvinceMessage">[State Or Province Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.stateOrProvince" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="countryNameMessage">[Country Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.countryName" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="internationalStreetMessage">[International Street Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.internationalStreet" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="internationalStateAndCityMessage">[International StateAndCity Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.internationalStateAndCity" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="phoneMessage">[Phone Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="address.phone" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-							</div>
-						</form>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</wicket:fragment>
+   <wicket:container wicket:id="customerViewOrEditFragment" />
+   <wicket:fragment wicket:id="customerEditFragment">
+      <table wicket:id="customerEditTable">
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="customerEditForm" action="">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="personalMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="suffixMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="suffix" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="salutationMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="salutation" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="firstNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="firstName" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="middleNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="middleName" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="lastNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="lastName" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="dateOfBirthMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="dateOfBirth" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="buyerEmailMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="buyerEmail" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="addressMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="postalCodeMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.postalCode" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="numberMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.number" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="countryMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.country" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="street1Message" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.street1" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="street2Message" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.street2" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="complementMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.complement" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="districtMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.district" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="cityNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.cityName" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="stateOrProvinceMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.stateOrProvince" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="countryNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.countryName" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="internationalStreetMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.internationalStreet" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="internationalStateAndCityMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.internationalStateAndCity" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="phoneMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.phone" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+         <tfoot>
+           <tr>
+               <td style="border-top: none;" colspan="1" align="right"><a wicket:id="cancel"></a>&nbsp;<a wicket:id="save"></a></td>
+            </tr>
+            <tr>
+               <td style="border-top: none;" colspan="1"><span wicket:id="feedback"></span></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="customerViewFragment">
+      <table wicket:id="customerViewTable">
+         <thead>
+            <tr>
+               <td colspan="1" align="left"><a wicket:id="edit"></a></td>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="customerViewForm" action="">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="personalMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="suffixMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="suffix" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="salutationMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="salutation" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="firstNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="firstName" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="middleNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="middleName" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="lastNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="lastName" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="dateOfBirthMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="dateOfBirth" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="buyerEmailMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="buyerEmail" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="addressMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="postalCodeMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.postalCode" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="numberMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.number" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="countryMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.country" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="street1Message" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.street1" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="street2Message" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.street2" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="complementMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.complement" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="districtMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.district" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="cityNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.cityName" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="stateOrProvinceMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.stateOrProvince" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="countryNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.countryName" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="internationalStreetMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.internationalStreet" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="internationalStateAndCityMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.internationalStateAndCity" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="phoneMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="address.phone" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </wicket:fragment>
 </wicket:panel>

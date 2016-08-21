@@ -8,21 +8,29 @@ import com.netbrasoft.gnuob.application.panel.MainMenuPanel;
 import com.netbrasoft.gnuob.application.security.AppRoles;
 
 @MountPath("application.html")
-@AuthorizeInstantiation({ AppRoles.MANAGER, AppRoles.EMPLOYEE, AppRoles.ADMINISTRATOR })
+@AuthorizeInstantiation({AppRoles.MANAGER, AppRoles.EMPLOYEE, AppRoles.ADMINISTRATOR})
 public class MainPage extends BasePage {
 
-   private static final long serialVersionUID = 2104311609974795936L;
+  private static final String MAIN_MENU_PANEL_ID = "mainMenuPanel";
 
-   private MainMenuPanel mainMenuPanel = new MainMenuPanel("mainMenuPanel");
+  private static final String CONTENT_BORDER_ID = "contentBorder";
 
-   private final ContentBorder contentBorder = new ContentBorder("contentBorder");
+  private static final long serialVersionUID = 2104311609974795936L;
 
-   @Override
-   protected void onInitialize() {
+  private final MainMenuPanel mainMenuPanel;
 
-      contentBorder.add(mainMenuPanel);
-      add(contentBorder);
+  private final ContentBorder contentBorder;
 
-      super.onInitialize();
-   }
+  public MainPage() {
+    mainMenuPanel = new MainMenuPanel(MAIN_MENU_PANEL_ID);
+    contentBorder = new ContentBorder(CONTENT_BORDER_ID);
+  }
+
+  @Override
+  protected void onInitialize() {
+    contentBorder.add(mainMenuPanel.setOutputMarkupId(true));
+    add(contentBorder.setOutputMarkupId(true));
+
+    super.onInitialize();
+  }
 }

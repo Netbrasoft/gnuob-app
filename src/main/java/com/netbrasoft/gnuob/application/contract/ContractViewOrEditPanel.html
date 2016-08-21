@@ -1,182 +1,187 @@
 <wicket:panel xmlns:wicket="http://wicket.apache.org">
-	<wicket:container wicket:id="contractViewOrEditFragement"></wicket:container>
-	<wicket:fragment wicket:id="contractEditFragement">
-		<table class="table" style="border-top: none;">
-			<tbody>
-				<tr>
-					<td style="border-top: none;">
-						<form wicket:id="contractEditForm" class="form-horizontal">
-							<div class="panel-heading">
-								<h3 class="panel-title">Contract</h3>
-							</div>
-							<div class="panel-body">
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="contractIdMessage">[Contract ID Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="contractId" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="friendlyNameMessage">[Friendly Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.friendlyName" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="buyerEmailMessage">[Buyer Email Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.buyerEmail" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="buyerMarketingEmailMessage">[Buyer Marketing Email Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.buyerMarketingEmail" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="contactPhoneMessage">[Contact Phone Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.contactPhone" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerMessage">[Payer Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.payer" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerBusinessMessage">[PayerBusiness Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.payerBusiness" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerIdMessage">[Payer Id Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.payerId" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerStatusMessage">[Payer Status Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.payerStatus" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="taxIdMessage">[Tax Id Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.taxId" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="taxIdTypeMessage">[Tax Id Type Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<input wicket:id="customer.taxIdType" class="form-control input-sm" type="text"></input>
-									</div>
-								</div>
-							</div>
-						</form>
-					</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td style="border-top: none;"><span wicket:id="feedback">[Feedback]</span></td>
-				</tr>
-				<tr>
-					<td style="border-top: none;" colspan="1" align="right"><a href="#" wicket:id="cancel" class="btn btn-xs"><wicket:message key="cancelMessage">[Cancel]</wicket:message></a><a wicket:id="save" class="btn btn-primary btn-xs"><wicket:message key="saveAndCloseMessage">[Save And Close]</wicket:message></a></td>
-				</tr>
-			</tfoot>
-		</table>
-	</wicket:fragment>
-	<wicket:fragment wicket:id="contractViewFragement">
-		<table class="table" style="border-top: none;">
-			<thead>
-				<tr>
-					<td colspan="1" align="left"><a href="#" wicket:id="edit" class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span>&nbsp;<wicket:message key="editMessage">[Edit Message]</wicket:message></a></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="border-top: none;">
-						<form wicket:id="contractViewForm" class="form-horizontal">
-							<div class="panel-heading">
-								<h3 class="panel-title">Contract</h3>
-							</div>
-							<div class="panel-body">
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="contractIdMessage">[Contract ID Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span class="form-control input-sm" wicket:id="contractId"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="friendlyNameMessage">[Friendly Name Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.friendlyName" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="buyerEmailMessage">[Buyer Email Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.buyerEmail" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="buyerMarketingEmailMessage">[Buyer Marketing Email Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.buyerMarketingEmail" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="contactPhoneMessage">[Contact Phone Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.contactPhone" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerMessage">[Payer Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.payer" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerBusinessMessage">[PayerBusiness Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.payerBusiness" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerIdMessage">[Payer Id Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.payerId" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="payerStatusMessage">[Payer Status Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.payerStatus" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="taxIdMessage">[Tax Id Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.taxId" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-								<div class="form-group">
-									<small><label class="col-sm-2 control-label"><wicket:message key="taxIdTypeMessage">[Tax Id Type Message]</wicket:message></label></small>
-									<div class="col-sm-10">
-										<small><span wicket:id="customer.taxIdType" class="form-control input-sm"></span></small>
-									</div>
-								</div>
-							</div>
-						</form>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</wicket:fragment>
+   <wicket:container wicket:id="contractViewOrEditFragment" />
+   <wicket:fragment wicket:id="contractEditFragment">
+      <table wicket:id="contractEditTable">
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="contractEditForm" action="">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="contractMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="contractIdMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="contractId" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="friendlyNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.friendlyName" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="buyerMarketingEmailMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.buyerMarketingEmail" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="contactPhoneMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.contactPhone" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payer" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerBusinessMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payerBusiness" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerIdMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payerId" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerStatusMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payerStatus" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="taxIdMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.taxId" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="taxIdTypeMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.taxIdType" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+         <tfoot>
+           <tr>
+               <td style="border-top: none;" colspan="1" align="right"><a wicket:id="cancel"></a>&nbsp;<a wicket:id="save"></a></td>
+            </tr>
+            <tr>
+               <td style="border-top: none;" colspan="1"><span wicket:id="feedback"></span></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="contractViewFragment">
+      <table wicket:id="contractViewTable">
+         <thead>
+            <tr>
+               <td colspan="1" align="left"><a wicket:id="edit"></a></td>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="contractViewForm" action="">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="contractMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="contractIdMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="contractId" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="friendlyNameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.friendlyName" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="buyerMarketingEmailMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.buyerMarketingEmail" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="contactPhoneMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.contactPhone" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payer" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerBusinessMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payerBusiness" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerIdMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payerId" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="payerStatusMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.payerStatus" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="taxIdMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.taxId" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="taxIdTypeMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="customer.taxIdType" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text"
+                                    readonly="readonly" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </wicket:fragment>
 </wicket:panel>

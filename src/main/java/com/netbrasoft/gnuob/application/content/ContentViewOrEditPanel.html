@@ -1,79 +1,94 @@
 <wicket:panel xmlns:wicket="http://wicket.apache.org">
-	<wicket:container wicket:id="contentViewOrEditFragement"></wicket:container>
-	<wicket:fragment wicket:id="contentEditFragement">
-		<table class="table" style="border-top: none;">
-			<thead>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="border-top: none;">
-						<form wicket:id="contentEditForm" class="form-horizontal">
-							<div class="form-group">
-								<small><label class="col-sm-2 control-label"><wicket:message key="nameMessage">[Name Message]</wicket:message></label></small>
-								<div class="col-sm-10">
-									<input wicket:id="name" class="form-control input-sm" type="text"></input>
-								</div>
-							</div>
-							<div class="form-group">
-								<small><label class="col-sm-2 control-label"><wicket:message key="formatMessage">[Format Message]</wicket:message></label></small>
-								<div class="col-sm-10">
-									<input wicket:id="format" class="form-control input-sm" type="text"></input>
-								</div>
-							</div>
-							<div class="form-group">
-								<small><label class="col-sm-2 control-label"><wicket:message key="descriptionMessage">[Description Message]</wicket:message></label></small>
-								<div class="col-sm-10">
-									<textarea wicket:id="content.content" class="form-control input-sm" style="resize: vertical;" rows="10"></textarea>
-								</div>
-							</div>
-						</form>
-					</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td style="border-top: none;"><span wicket:id="feedback">[Feedback]</span></td>
-				</tr>
-				<tr>
-					<td style="border-top: none;" colspan="1" align="right"><a href="#" wicket:id="cancel" class="btn btn-xs"><wicket:message key="cancelMessage">[Cancel]</wicket:message></a><a href="#" wicket:id="save" type="submit" class="btn btn-primary btn-xs"><wicket:message key="saveAndCloseMessage">[Save And Close]</wicket:message></a></td>
-				</tr>
-			</tfoot>
-		</table>
-	</wicket:fragment>
-	<wicket:fragment wicket:id="contentViewFragement">
-		<table class="table" style="border-top: none;">
-			<thead>
-				<tr>
-					<td colspan="1" align="left"><a href="#" wicket:id="edit" class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span>&nbsp;<wicket:message key="editMessage">[Edit Message]</wicket:message></a></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="border-top: none;">
-						<form wicket:id="contentViewForm" class="form-horizontal">
-							<div class="form-group">
-								<small><label class="col-sm-2 control-label"><wicket:message key="nameMessage">[Name Message]</wicket:message></label></small>
-								<div class="col-sm-10">
-									<small><span class="form-control input-sm" wicket:id="name">[Name]</span></small>
-								</div>
-							</div>
-							<div class="form-group">
-								<small><label class="col-sm-2 control-label"><wicket:message key="formatMessage">[Format Message]</wicket:message></label></small>
-								<div class="col-sm-10">
-									<small><span class="form-control input-sm" wicket:id="format">[Format]</span></small>
-								</div>
-							</div>
-							<div class="form-group">
-								<small><label class="col-sm-2 control-label"><wicket:message key="contentMessage">[Content Message]</wicket:message></label></small>
-								<div class="col-sm-10">
-									<span wicket:id="content.content"></span>
-								</div>
-							</div>
-						</form>
-					</td>
-				</tr>
-			</tbody>
-			<tfoot></tfoot>
-		</table>
-	</wicket:fragment>
+   <wicket:container wicket:id="contentViewOrEditFragment" />
+   <wicket:fragment wicket:id="contentEditFragment">
+      <table wicket:id="contentEditTable">
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="contentEditForm" action="">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="contentMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="nameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="name" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="formatMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="format" class="form-control input-sm" type="text" />
+                              </div>
+                           </div>
+                           <div class="form-group required">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="contentMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <textarea wicket:id="content" class="form-control input-sm" style="resize: vertical;" rows="10" cols=""></textarea>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+         <tfoot>
+           <tr>
+               <td style="border-top: none;" colspan="1" align="right"><a wicket:id="cancel"></a>&nbsp;<a wicket:id="save"></a></td>
+            </tr>
+            <tr>
+               <td style="border-top: none;" colspan="1"><span wicket:id="feedback"></span></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="contentViewFragment">
+      <table wicket:id="contentViewTable">
+         <thead>
+            <tr>
+               <td colspan="1" align="left"><a wicket:id="edit"></a></td>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="contentViewForm" action="">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">
+                              <wicket:message key="contentMessage" />
+                           </h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="nameMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="name" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="formatMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <input wicket:id="format" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <small><label class="col-sm-2 control-label"><wicket:message key="contentMessage" /></label></small>
+                              <div class="col-sm-10">
+                                 <span wicket:id="content"></span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </wicket:fragment>
 </wicket:panel>

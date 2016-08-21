@@ -1,0 +1,60 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+   <style type="text/css">
+.offerRecordDataviewContainer tr {
+   cursor: pointer;
+}
+</style>
+   <wicket:container wicket:id="offerRecordViewOrEditFragment" />
+   <wicket:fragment wicket:id="offerRecordEditFragment">
+      <table wicket:id="offerRecordEditTable">
+         <thead>
+            <tr>
+               <td style="border-top: none;" colspan="3" align="left"><a wicket:id="add"><wicket:message key="addMessage" /></a></td>
+            </tr>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="nameMessage" /></small></th>
+               <th colspan="2" style="border-top: none;"><small><wicket:message key="descriptionMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="offerRecordDataviewContainer" class="offerRecordDataviewContainer">
+            <tr wicket:id="offerRecordDataview">
+               <td><small><span wicket:id="name"></span></small></td>
+               <td><small><span wicket:id="description"></span></small></td>
+               <td align="right"><button wicket:id="remove"></button></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="3" align="right"><ul wicket:id="offerRecordPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="3" style="border-top: none;"><div wicket:id="offerRecordViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="offerRecordViewFragment">
+      <table wicket:id="offerRecordViewTable">
+         <thead>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="nameMessage" /></small></th>
+               <th style="border-top: none;"><small><wicket:message key="descriptionMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="offerRecordDataviewContainer" class="offerRecordDataviewContainer">
+            <tr wicket:id="offerRecordDataview">
+               <td><small><span wicket:id="name"></span></small></td>
+               <td><small><span wicket:id="description"></span></small></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="3" align="right"><ul wicket:id="offerRecordPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="3" style="border-top: none;"><div wicket:id="offerRecordViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+</wicket:panel>

@@ -1,0 +1,51 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+   <wicket:container wicket:id="subCategoryContentViewOrEditFragment" />
+   <wicket:fragment wicket:id="subCategoryContentEditFragment">
+      <table wicket:id="contentEditTable">
+         <thead>
+            <tr>
+               <td style="border-top: none;" colspan="3" align="left"><a wicket:id="add"><wicket:message key="addMessage" /></a></td>
+            </tr>
+            <tr>
+               <th colspan="2" style="border-top: none;"><small><wicket:message key="nameMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="contentDataviewContainer">
+            <tr wicket:id="contentDataview">
+               <td><small><span wicket:id="name"></span></small></td>
+               <td align="right"><button wicket:id="remove"></button></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="2" align="right"><ul wicket:id="contentPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="border-top: none;"><div wicket:id="contentViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="subCategoryContentViewFragment">
+      <table wicket:id="contentViewTable">
+         <thead>
+            <tr>
+               <th colspan="2" style="border-top: none;"><small><wicket:message key="nameMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="contentDataviewContainer">
+            <tr wicket:id="contentDataview">
+               <td><small><span wicket:id="name"></span></small></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="2" align="right"><ul wicket:id="contentPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="border-top: none;"><div wicket:id="contentViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+</wicket:panel>

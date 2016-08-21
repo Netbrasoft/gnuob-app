@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
+import com.netbrasoft.gnuob.application.NetbrasoftApplicationConstants;
 import com.netbrasoft.gnuob.application.contract.ContractTab;
 import com.netbrasoft.gnuob.application.customer.CustomerTab;
 import com.netbrasoft.gnuob.application.offer.OfferTab;
@@ -17,34 +18,34 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.tabs.BootstrapTabbedPane
 
 public class CrmTab extends AbstractTab {
 
-   private static final long serialVersionUID = 4835579949680085443L;
+  private static final String NAV_NAV_PILLS_NAV_STACKED_COL_MD_2_CSS_CLASS = "nav nav-pills nav-stacked col-md-2";
 
-   private ITab contractTab = new ContractTab(Model.of("Contract"));
-   private ITab customerTab = new CustomerTab(Model.of("Customer"));
-   private ITab offerTab = new OfferTab(Model.of("Offer"));
-   private ITab orderTab = new OrderTab(Model.of("Order"));
+  private static final long serialVersionUID = 4835579949680085443L;
 
-   public CrmTab(final IModel<String> title) {
-      super(title);
-   }
+  public CrmTab(final IModel<String> title) {
+    super(title);
+  }
 
-   @Override
-   public WebMarkupContainer getPanel(final String panelId) {
-      BootstrapTabbedPanel<ITab> crmTabbedPanel = new BootstrapTabbedPanel<ITab>(panelId, new ArrayList<ITab>()) {
+  @Override
+  public WebMarkupContainer getPanel(final String panelId) {
+    final BootstrapTabbedPanel<ITab> crmTabbedPanel = new BootstrapTabbedPanel<ITab>(panelId, new ArrayList<ITab>()) {
 
-         private static final long serialVersionUID = -8650291789763661400L;
+      private static final long serialVersionUID = -8650291789763661400L;
 
-         @Override
-         public String getTabContainerCssClass() {
-            return "nav nav-pills nav-stacked col-md-2";
-         }
-      };
+      @Override
+      public String getTabContainerCssClass() {
+        return NAV_NAV_PILLS_NAV_STACKED_COL_MD_2_CSS_CLASS;
+      }
+    };
+    final CustomerTab customerTab = new CustomerTab(Model.of(crmTabbedPanel.getString(NetbrasoftApplicationConstants.CUSTOMER_MESSAGE_KEY)));
+    final ContractTab contractTab = new ContractTab(Model.of(crmTabbedPanel.getString(NetbrasoftApplicationConstants.CONTRACT_MESSAGE_KEY)));
+    final OrderTab orderTab = new OrderTab(Model.of(crmTabbedPanel.getString(NetbrasoftApplicationConstants.ORDER_MESSAGE_KEY)));
+    final OfferTab offerTab = new OfferTab(Model.of(crmTabbedPanel.getString(NetbrasoftApplicationConstants.OFFER_MESSAGE_KEY)));
 
-      crmTabbedPanel.getTabs().add(customerTab);
-      crmTabbedPanel.getTabs().add(contractTab);
-      crmTabbedPanel.getTabs().add(orderTab);
-      crmTabbedPanel.getTabs().add(offerTab);
-
-      return crmTabbedPanel;
-   }
+    crmTabbedPanel.getTabs().add(customerTab);
+    crmTabbedPanel.getTabs().add(contractTab);
+    crmTabbedPanel.getTabs().add(orderTab);
+    crmTabbedPanel.getTabs().add(offerTab);
+    return crmTabbedPanel;
+  }
 }

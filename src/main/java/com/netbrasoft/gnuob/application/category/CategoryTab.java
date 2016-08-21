@@ -9,14 +9,16 @@ import com.netbrasoft.gnuob.api.Category;
 
 public class CategoryTab extends AbstractTab {
 
-   private static final long serialVersionUID = 4835579949680085443L;
+  private static final long serialVersionUID = 4835579949680085443L;
 
-   public CategoryTab(final IModel<String> title) {
-      super(title);
-   }
+  public CategoryTab(final IModel<String> title) {
+    super(title);
+  }
 
-   @Override
-   public WebMarkupContainer getPanel(final String panelId) {
-      return new CategoryPanel(panelId, Model.of(new Category()));
-   }
+  @Override
+  public WebMarkupContainer getPanel(final String panelId) {
+    final Category category = new Category();
+    category.setActive(true);
+    return new CategoryPanel(panelId, Model.of(category));
+  }
 }

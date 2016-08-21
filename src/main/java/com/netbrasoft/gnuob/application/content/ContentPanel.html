@@ -1,45 +1,60 @@
 <wicket:panel xmlns:wicket="http://wicket.apache.org">
-	<div class="col-md-10">
-		<h1>
-			<small><wicket:message key="definitionMessage">[Definitions Message]</wicket:message></small>
-		</h1>
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<td colspan="4" align="left"><a href="#" wicket:id="add" class="btn btn-xs"><span class="glyphicon glyphicon-plus"></span>&nbsp;<wicket:message key="addMessage">[Add Message]</wicket:message></a></td>
-				</tr>
-				<tr>
-					<th wicket:id="orderByName"><small><wicket:message key="nameMessage">[Name]</wicket:message></small></th>
-					<th wicket:id="orderByFormat"><small><wicket:message key="formatMessage">[Format]</wicket:message></small></th>
-					<th><small><wicket:message key="operationMessage">[Operation Message]</wicket:message></small></th>
-				</tr>
-			</thead>
-			<tbody wicket:id="contentDataviewContainer">
-				<tr wicket:id="contentDataview">
-					<td><small><span wicket:id="name"></span></small></td>
-					<td><small><span wicket:id="format"></span></small></td>
-					<td><a href="#" class="btn btn-xs"><span class="glyphicon glyphicon-remove"></span>&nbsp;<wicket:message key="removeMessage">[Remove Message]</wicket:message></a></td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="3" align="right"><ul wicket:id="contentPagingNavigator"></ul></td>
-				</tr>
-			</tfoot>
-		</table>
-		<h2>
-			<small><wicket:message key="detailMessage">[Detail Message]</wicket:message></small>
-		</h2>
-		<div align="right">
-			<a href="#needHelp" data-toggle="collapse" aria-expanded="false" aria-controls="needHelp"><small><wicket:message key="needHelpMessage">[Need Help Message]</wicket:message></small></a>
-			<div class="collapse panel panel-default" id="needHelp">
-				<div class="panel-body">
-					<small><wicket:message key="needHelpTextMessage">[Need Help Text Message]</wicket:message></small>
-				</div>
-			</div>
-		</div>
-		<div class="well well-sm">
-			<div wicket:id="contentViewOrEditPanel"></div>
-		</div>
-	</div>
+  <style type="text/css">
+.contentDataviewContainer tr {
+  cursor: pointer;
+}
+</style>
+  <div wicket:id="contentPanelContainer">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <wicket:message key="definitionMessage" />
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table wicket:id="contentTableContainer">
+          <thead>
+            <tr>
+              <td style="border-top: none;" colspan="2"><span wicket:id="feedback"></span></td>
+            </tr>
+            <tr>
+              <td style="border-top: none;" colspan="2" align="left"><a wicket:id="add"><wicket:message key="addMessage" /></a></td>
+            </tr>
+            <tr>
+              <th colspan="2" style="border-top: none;" wicket:id="orderByName"><small><wicket:message key="nameMessage" /></small></th>
+            </tr>
+          </thead>
+          <tbody wicket:id="contentDataviewContainer" class="contentDataviewContainer">
+            <tr wicket:id="contentDataview">
+              <td><small><span wicket:id="name"></span></small></td>
+              <td align="right"><button wicket:id="remove"></button></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2" align="right"><ul wicket:id="contentPagingNavigator"></ul></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <wicket:message key="detailMessage" />
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div align="right">
+          <a href="#needHelp" data-toggle="collapse" aria-expanded="false" aria-controls="needHelp"><small><wicket:message key="needHelpMessage" /></small></a>
+          <div class="collapse panel panel-default" id="needHelp">
+            <div class="panel-body">
+              <small><wicket:message key="needHelpTextMessage" /></small>
+            </div>
+          </div>
+        </div>
+        <div wicket:id="contentViewOrEditPanel"></div>
+      </div>
+    </div>
+  </div>
 </wicket:panel>

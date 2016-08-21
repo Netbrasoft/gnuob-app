@@ -9,14 +9,16 @@ import com.netbrasoft.gnuob.api.Offer;
 
 public class OfferTab extends AbstractTab {
 
-   private static final long serialVersionUID = 4835579949680085443L;
+  private static final long serialVersionUID = 4835579949680085443L;
 
-   public OfferTab(final IModel<String> title) {
-      super(title);
-   }
+  public OfferTab(final IModel<String> title) {
+    super(title);
+  }
 
-   @Override
-   public WebMarkupContainer getPanel(final String panelId) {
-      return new OfferPanel(panelId, Model.of(new Offer()));
-   }
+  @Override
+  public WebMarkupContainer getPanel(final String panelId) {
+    final Offer offer = new Offer();
+    offer.setActive(true);
+    return new OfferPanel(panelId, Model.of(offer));
+  }
 }

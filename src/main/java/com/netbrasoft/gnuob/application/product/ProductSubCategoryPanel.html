@@ -1,0 +1,56 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+   <style type="text/css">
+.categoryDataviewContainer tr {
+   cursor: pointer;
+}
+</style>
+   <wicket:container wicket:id="productSubCategoryViewOrEditFragment" />
+   <wicket:fragment wicket:id="productSubCategoryEditFragment">
+      <table wicket:id="categoryEditTable">
+         <thead>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="nameMessage" /></small></th>
+               <th style="border-top: none;"><small><wicket:message key="positionMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="categoryDataviewContainer" class="categoryDataviewContainer">
+            <tr wicket:id="categoryDataview">
+               <td><small><span wicket:id="name"></span></small></td>
+               <td><small><span wicket:id="position"></span></small></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="2" align="right"><ul wicket:id="categoryPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="border-top: none;"><div wicket:id="subCategoryViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="productSubCategoryViewFragment">
+      <table wicket:id="categoryViewTable">
+         <thead>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="nameMessage" /></small></th>
+               <th style="border-top: none;"><small><wicket:message key="positionMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="categoryDataviewContainer" class="categoryDataviewContainer">
+            <tr wicket:id="categoryDataview">
+               <td><small><span wicket:id="name"></span></small></td>
+               <td><small><span wicket:id="position"></span></small></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="2" align="right"><ul wicket:id="categoryPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="border-top: none;"><div wicket:id="subCategoryViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+</wicket:panel>

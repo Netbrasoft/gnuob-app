@@ -1,0 +1,41 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+  <wicket:container wicket:id="productSubCategoryViewOrEditFragment" />
+  <wicket:fragment wicket:id="productSubCategoryEditFragment">
+    <table wicket:id="productSubCategoryEditTable">
+      <tbody>
+        <tr>
+          <td style="border-top: none;">
+            <form wicket:id="subCategoryEditForm" action="">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div wicket:id="productSubCategoriesDataViewContainer">
+                    <div wicket:id="productSubCategoriesDataView"></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </wicket:fragment>
+  <wicket:fragment wicket:id="productSubCategoryViewFragment">
+    <table wicket:id="productSubCategoryViewTable">
+      <tbody>
+        <tr>
+          <td style="border-top: none;">
+            <form wicket:id="subCategoryViewForm" action="">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div wicket:id="productSubCategoriesDataViewContainer">
+                    <div wicket:id="productSubCategoriesDataView"></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </wicket:fragment>
+</wicket:panel>

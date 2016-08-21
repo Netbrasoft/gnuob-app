@@ -6,13 +6,23 @@ import com.netbrasoft.gnuob.application.panel.LoginPanel;
 
 public class SignInPage extends BasePage {
 
-   private static final long serialVersionUID = -8080808937122686622L;
+  private static final String SIGN_IN_PANEL_ID = "signInPanel";
 
-   public SignInPage() {
-      this(null);
-   }
+  private static final long serialVersionUID = -8080808937122686622L;
 
-   public SignInPage(final PageParameters parameters) {
-      add(new LoginPanel("signInPanel"));
-   }
+  private final LoginPanel loginPanel;
+
+  public SignInPage() {
+    this(null);
+  }
+
+  public SignInPage(final PageParameters parameters) {
+    loginPanel = new LoginPanel(SIGN_IN_PANEL_ID);
+  }
+
+  @Override
+  protected void onInitialize() {
+    add(loginPanel.setOutputMarkupId(true));
+    super.onInitialize();
+  }
 }

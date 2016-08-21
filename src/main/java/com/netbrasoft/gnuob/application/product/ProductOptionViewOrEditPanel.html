@@ -1,0 +1,92 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+   <wicket:container wicket:id="productOptionViewOrEditFragment" />
+   <wicket:fragment wicket:id="productOptionEditFragment">
+      <table wicket:id="optionEditTable">
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="optionEditForm" action="">
+                     <div class="form-group">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="positionMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <input wicket:id="position" class="form-control input-sm" type="number" />
+                        </div>
+                     </div>
+                     <div class="form-group required">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="valueMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <textarea wicket:id="value" class="form-control input-sm" style="resize: vertical;" rows="5" cols=""></textarea>
+                        </div>
+                     </div>
+                     <div class="form-group required">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="descriptionMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <textarea wicket:id="description" class="form-control input-sm" style="resize: vertical;" rows="5" cols=""></textarea>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="disabledMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <input wicket:id="disabled" class="form-control input-sm" type="checkbox" />
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                           <a wicket:id="save"></a>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="col-sm-12">
+                           <div wicket:id="productSubOptionPanel"></div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="productOptionViewFragment">
+      <table wicket:id="optionViewTable">
+         <tbody>
+            <tr>
+               <td style="border-top: none;">
+                  <form wicket:id="optionViewForm" action="">
+                     <div class="form-group">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="positionMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <input wicket:id="position" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="number" readonly="readonly" />
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="valueMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <textarea wicket:id="value" class="form-control input-sm" style="resize: vertical; background-color: white;" disabled="disabled" rows="5" cols=""
+                              readonly="readonly"></textarea>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="descriptionMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <textarea wicket:id="description" class="form-control input-sm" style="resize: vertical; background-color: white;" disabled="disabled" rows="5" cols=""
+                              readonly="readonly"></textarea>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <small><label class="col-sm-2 control-label"><wicket:message key="disabledMessage" /></label></small>
+                        <div class="col-sm-10">
+                           <input wicket:id="disabled" class="form-control input-sm" style="background-color: white;" disabled="disabled" type="text" readonly="readonly" />
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="col-sm-12">
+                           <div wicket:id="productSubOptionPanel"></div>
+                        </div>
+                     </div>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </wicket:fragment>
+</wicket:panel>

@@ -9,14 +9,16 @@ import com.netbrasoft.gnuob.api.Setting;
 
 public class SettingTab extends AbstractTab {
 
-   private static final long serialVersionUID = 4835579949680085443L;
+  private static final long serialVersionUID = 4835579949680085443L;
 
-   public SettingTab(final IModel<String> title) {
-      super(title);
-   }
+  public SettingTab(final IModel<String> title) {
+    super(title);
+  }
 
-   @Override
-   public WebMarkupContainer getPanel(final String panelId) {
-      return new SettingPanel(panelId, Model.of(new Setting()));
-   }
+  @Override
+  public WebMarkupContainer getPanel(final String panelId) {
+    final Setting setting = new Setting();
+    setting.setActive(true);
+    return new SettingPanel(panelId, Model.of(setting));
+  }
 }

@@ -1,53 +1,82 @@
 package com.netbrasoft.gnuob.application.page;
 
+import java.util.List;
+
 import org.apache.commons.lang3.text.WordUtils;
-import org.apache.wicket.markup.head.CssContentHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
+import org.apache.wicket.ajax.IAjaxIndicatorAware;
+import org.apache.wicket.markup.head.CssHeaderItem;
+import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
-import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
+import org.apache.wicket.markup.head.filter.FilteredHeaderItem;
+import org.apache.wicket.markup.head.filter.HeaderResponseContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
-import com.netbrasoft.gnuob.application.NetbrasoftApplication;
+import com.google.common.collect.Lists;
 
-import de.agilecoders.wicket.webjars.request.resource.WebjarsCssResourceReference;
-import de.agilecoders.wicket.webjars.request.resource.WebjarsJavaScriptResourceReference;
+import de.agilecoders.wicket.core.Bootstrap;
+import de.agilecoders.wicket.extensions.markup.html.bootstrap.confirmation.ConfirmationBehavior;
+import de.agilecoders.wicket.extensions.markup.html.bootstrap.icon.FontAwesomeCDNCSSReference;
+import de.agilecoders.wicket.extensions.markup.html.bootstrap.references.JQueryCookieJsReference;
 
-public abstract class BasePage extends WebPage {
+public abstract class BasePage extends WebPage implements IAjaxIndicatorAware {
 
-   private static final long serialVersionUID = 8192334293970678397L;
+  class NetbrasoftApplicationJavaScript extends JavaScriptResourceReference {
 
-   private static final String GNUOB_SITE_TITLE_PROPERTY = "gnuob.site.title";
+    private static final long serialVersionUID = 62421909883685410L;
 
-   private static final JavaScriptReferenceHeaderItem JS_VALIDATOR_REFERENCE = JavaScriptHeaderItem.forReference(new WebjarsJavaScriptResourceReference("/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"));
+    private NetbrasoftApplicationJavaScript(final Class<?> scope, final String name) {
+      super(scope, name);
+    }
 
-   private static final JavaScriptReferenceHeaderItem JS_JQUERY_COOKIE = JavaScriptHeaderItem.forReference(new WebjarsJavaScriptResourceReference("/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"));
+    @Override
+    public List<HeaderItem> getDependencies() {
+      final List<HeaderItem> dependencies = Lists.newArrayList(super.getDependencies());
 
-   private static final JavaScriptReferenceHeaderItem JS_BOOTSTRAP_3_DATEPICKER = JavaScriptHeaderItem.forReference(new WebjarsJavaScriptResourceReference("/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js"));
+      dependencies.add(JavaScriptHeaderItem.forReference(JQueryCookieJsReference.INSTANCE));
+      dependencies.add(JavaScriptHeaderItem.forReference(WebApplication.get().getJavaScriptLibrarySettings().getJQueryReference()));
+      dependencies.add(JavaScriptHeaderItem.forReference(Bootstrap.getSettings().getJsResourceReference()));
+      dependencies.add(CssHeaderItem.forReference(FontAwesomeCDNCSSReference.instance()));
 
-   private static final CssReferenceHeaderItem CSS_BOOTSTRAP_3_DATEPICKER = CssContentHeaderItem.forReference(new WebjarsCssResourceReference("/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker.min.css"));
+      return dependencies;
+    }
+  }
 
-   private static final JavaScriptReferenceHeaderItem JS_JQUERY = JavaScriptHeaderItem.forReference(NetbrasoftApplication.get().getJavaScriptLibrarySettings().getJQueryReference());
+  private static final String NETBRASOFT_APPLICATION_JAVASCRIPT_CONTAINER_FILTER_NAME = "netbrasoft-application-javascript-container";
 
-   @Override
-   protected void onInitialize() {
-      String site = getRequest().getClientUrl().getHost();
-      String title = site.replaceFirst("www.", "").split("\\.")[0];
+  private static final String BOOTSTRAP_CONFIRMATION_JS_NAME = "bootstrap-confirmation.js";
 
-      add(new Label(GNUOB_SITE_TITLE_PROPERTY, System.getProperty(GNUOB_SITE_TITLE_PROPERTY, WordUtils.capitalize(title))));
+  private static final long serialVersionUID = 8192334293970678397L;
 
-      super.onInitialize();
-   }
+  private static final String GNUOB_SITE_TITLE_PROPERTY = "gnuob.site.title";
 
-   @Override
-   public void renderHead(IHeaderResponse response) {
-      response.render(JS_JQUERY);
-      response.render(JS_VALIDATOR_REFERENCE);
-      response.render(JS_JQUERY_COOKIE);
-      response.render(JS_BOOTSTRAP_3_DATEPICKER);
-      response.render(CSS_BOOTSTRAP_3_DATEPICKER);
+  private static final String VEIL_HEX_LOADING = "veil-hex-loading";
 
-      super.renderHead(response);
-   }
+  @Override
+  public String getAjaxIndicatorMarkupId() {
+    return VEIL_HEX_LOADING;
+  }
+
+  @Override
+  protected void onInitialize() {
+    final String site = getRequest().getClientUrl().getHost();
+    final String title = site.replaceFirst("www.", "").split("\\.")[0];
+
+    add(new Label(GNUOB_SITE_TITLE_PROPERTY, System.getProperty(GNUOB_SITE_TITLE_PROPERTY, WordUtils.capitalize(title))).setOutputMarkupId(true));
+    add(new HeaderResponseContainer(NETBRASOFT_APPLICATION_JAVASCRIPT_CONTAINER_FILTER_NAME, NETBRASOFT_APPLICATION_JAVASCRIPT_CONTAINER_FILTER_NAME).setOutputMarkupId(true));
+
+    super.onInitialize();
+  }
+
+  @Override
+  public void renderHead(final IHeaderResponse response) {
+    final NetbrasoftApplicationJavaScript netbrasoftApplicatijaonJavaScript = new NetbrasoftApplicationJavaScript(ConfirmationBehavior.class, BOOTSTRAP_CONFIRMATION_JS_NAME);
+    final FilteredHeaderItem filteredHeaderItem =
+        new FilteredHeaderItem(JavaScriptHeaderItem.forReference(netbrasoftApplicatijaonJavaScript), NETBRASOFT_APPLICATION_JAVASCRIPT_CONTAINER_FILTER_NAME);
+    response.render(filteredHeaderItem);
+    super.renderHead(response);
+  }
 }

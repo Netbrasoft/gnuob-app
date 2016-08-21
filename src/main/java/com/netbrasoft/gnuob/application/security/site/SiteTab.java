@@ -9,14 +9,16 @@ import com.netbrasoft.gnuob.api.Site;
 
 public class SiteTab extends AbstractTab {
 
-   private static final long serialVersionUID = 4835579949680085443L;
+  private static final long serialVersionUID = 4835579949680085443L;
 
-   public SiteTab(final IModel<String> title) {
-      super(title);
-   }
+  public SiteTab(final IModel<String> title) {
+    super(title);
+  }
 
-   @Override
-   public WebMarkupContainer getPanel(final String panelId) {
-      return new SitePanel(panelId, Model.of(new Site()));
-   }
+  @Override
+  public WebMarkupContainer getPanel(final String panelId) {
+    final Site site = new Site();
+    site.setActive(true);
+    return new SitePanel(panelId, Model.of(site));
+  }
 }

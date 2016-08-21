@@ -1,19 +1,21 @@
 <wicket:panel xmlns:wicket="http://wicket.apache.org">
-	<div class="row">
-		<div class="col-md-10">
-			<h4>
-				<b><span wicket:id="implementationVendor"></span>&nbsp;<span wicket:id="implementationTitle"></span>&nbsp;<small><span wicket:id="implementationVersion"></span></small></b>
-			</h4>
-		</div>
-		<div class="col-md-2">
-			<div class="btn-group">
-				<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-					<span class="glyphicon glyphicon-user"></span>&nbsp;<wicket:message key="userMessage">[User Message]</wicket:message>&nbsp;<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<li><a class="btn btn-xs" wicket:id="logout" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;<wicket:message key="logoutMessage">[Logout Message]</wicket:message></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+   <div class="row">
+      <div class="col-md-10">
+         <h4>
+            <b><span wicket:id="implementationVendor"></span>&nbsp;<span wicket:id="implementationTitle"></span>&nbsp;<small><span wicket:id="implementationVersion"></span></small></b>
+         </h4>
+      </div>
+      <div class="col-md-2">
+         <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+               <span class="glyphicon glyphicon-user"></span>&nbsp;
+               <wicket:message key="userMessage" />
+               &nbsp;<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+               <li><a class="btn btn-xs" wicket:id="logout" data-dismiss="modal"> <span class="glyphicon glyphicon-remove"></span>&nbsp;<wicket:message key="logoutMessage" /></a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
 </wicket:panel>

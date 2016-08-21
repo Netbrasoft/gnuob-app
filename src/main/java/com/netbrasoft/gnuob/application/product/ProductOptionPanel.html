@@ -1,0 +1,64 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+   <style type="text/css">
+.optionDataviewContainer tr {
+   cursor: pointer;
+}
+</style>
+   <wicket:container wicket:id="productOptionViewOrEditFragment" />
+   <wicket:fragment wicket:id="productOptionEditFragment">
+      <table wicket:id="optionEditTable">
+         <thead>
+            <tr>
+               <td style="border-top: none;" colspan="4" align="left"><a wicket:id="add"><wicket:message key="addMessage" /></a></td>
+            </tr>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="descriptionMessage" /></small></th>
+               <th style="border-top: none;"><small><wicket:message key="valueMessage" /></small></th>
+               <th colspan="2" style="border-top: none;"><small><wicket:message key="disabledMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="optionDataviewContainer" class="optionDataviewContainer">
+            <tr wicket:id="optionDataview">
+               <td><small><span wicket:id="description"></span></small></td>
+               <td><small><span wicket:id="value"></span></small></td>
+               <td><small><span wicket:id="disabled"></span></small></td>
+               <td align="right"><button wicket:id="remove"></button></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="4" align="right"><ul wicket:id="optionPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="4" style="border-top: none;"><div wicket:id="productOptionViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="productOptionViewFragment">
+      <table wicket:id="optionViewTable">
+         <thead>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="descriptionMessage" /></small></th>
+               <th style="border-top: none;"><small><wicket:message key="valueMessage" /></small></th>
+               <th style="border-top: none;"><small><wicket:message key="disabledMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="optionDataviewContainer" class="optionDataviewContainer">
+            <tr wicket:id="optionDataview">
+               <td><small><span wicket:id="description"></span></small></td>
+               <td><small><span wicket:id="value"></span></small></td>
+               <td><small><span wicket:id="disabled"></span></small></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="3" align="right"><ul wicket:id="optionPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="3" style="border-top: none;"><div wicket:id="productOptionViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+</wicket:panel>

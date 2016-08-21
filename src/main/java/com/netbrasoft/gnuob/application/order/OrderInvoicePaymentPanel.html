@@ -1,0 +1,60 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+   <style type="text/css">
+.paymentDataviewContainer tr {
+   cursor: pointer;
+}
+</style>
+   <wicket:container wicket:id="orderInvoicePaymentViewOrEditFragment" />
+   <wicket:fragment wicket:id="orderInvoicePaymentEditFragment">
+      <table wicket:id="paymentEditTable">
+         <thead>
+            <tr>
+               <td style="border-top: none;" colspan="3" align="left"><a wicket:id="add"><wicket:message key="addMessage" /></a></td>
+            </tr>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="paymentDateMessage" /></small></th>
+               <th colspan="2" style="border-top: none;"><small><wicket:message key="paymentStatusMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="paymentDataviewContainer" class="paymentDataviewContainer">
+            <tr wicket:id="paymentDataview">
+               <td><small><span wicket:id="paymentDate"></span></small></td>
+               <td><small><span wicket:id="paymentStatus"></span></small></td>
+               <td align="right"><button wicket:id="remove"></button></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="3" align="right"><ul wicket:id="paymentPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="3" style="border-top: none;"><div wicket:id="paymentViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+   <wicket:fragment wicket:id="orderInvoicePaymentViewFragment">
+      <table wicket:id="paymentViewTable">
+         <thead>
+            <tr>
+               <th style="border-top: none;"><small><wicket:message key="paymentDateMessage" /></small></th>
+               <th colspan="2" style="border-top: none;"><small><wicket:message key="paymentStatusMessage" /></small></th>
+            </tr>
+         </thead>
+         <tbody wicket:id="paymentDataviewContainer" class="paymentDataviewContainer">
+            <tr wicket:id="paymentDataview">
+               <td><small><span wicket:id="paymentDate"></span></small></td>
+               <td colspan="2"><small><span wicket:id="paymentStatus"></span></small></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="3" align="right"><ul wicket:id="paymentPagingNavigator"></ul></td>
+            </tr>
+            <tr>
+               <td colspan="3" style="border-top: none;"><div wicket:id="paymentViewOrEditPanel"></div></td>
+            </tr>
+         </tfoot>
+      </table>
+   </wicket:fragment>
+</wicket:panel>
